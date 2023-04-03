@@ -47,10 +47,5 @@ def __init__(self, width=0, height=0):
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            rect_str = ""
-            for i in range(self.height):
-                rect_str += "#" * self.width
-                if i != self.height - 1:
-                    rect_str += "\n"
-            return rect_str
+            return '\n'.join(['#' * self.width] * self.height)
 
