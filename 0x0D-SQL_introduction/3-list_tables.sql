@@ -1,3 +1,3 @@
 -- list tables
-mysql -u your_username -p -e "mysql ; SHOW TABLES;"
+mysql -u dimitriv -p -e "mysql ; SHOW TABLES;"
 
