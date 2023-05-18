@@ -1,3 +1,4 @@
--- list tables
-mysql -u dimitriv -p -e "mysql ; SHOW TABLES;"
+-- Lists all tables of a database
+
+SHOW TABLES;
 
