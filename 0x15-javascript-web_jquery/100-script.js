@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('HEADER').style.color = '#FF0000';
 });

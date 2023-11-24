@@ -1,25 +1,17 @@
 #!/usr/bin/python3
+"""A script that:
+- takes in a URL,
+- sends a request to the URL
+- displays the body of the response (decoded in utf-8).
 """
-Sends a request to the URL and displays the body of the response.
-"""
-import urllib.request
-from sys import argv
-
-
-def main(argv):
-    """
-    Method that manage urllib.error.HTTPError exceptions and
-    print: Error code: followed by the HTTP status code
-    """
-    url = argv[1]
-    req = urllib.request.Request(url)
-    try:
-        with urllib.request.urlopen(req) as response:
-            result = response.read()
-            print(result.decode('utf8'))
-    except urllib.error.URLError as e:
-        print("Error code: {}".format(e.code))
 
 
 if __name__ == "__main__":
-    main(argv)
+    import sys
+    from urllib import request, error
+
+    try:
+        with request.urlopen(sys.argv[1]) as res:
+            print(res.read().decode('UTF-8'))
+    except error.HTTPError as er:
+        print('Error code:', er.code)
